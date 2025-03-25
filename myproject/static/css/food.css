@@ -1,0 +1,11 @@
+.food-item {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}

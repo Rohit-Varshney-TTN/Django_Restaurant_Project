@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Food Detail{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>{{ food.name }}</h2>
+    <img src="{{ food.image.url }}" alt="{{ food.name }}" width="300">
+    <p>{{ food.description }}</p>
+    <p class="text-success"><strong>Price:</strong> ${{ food.price }}</p>
+    <a class="btn btn-primary" href="{% url 'add-to-cart' food.id %}">Add to Cart</a>
+</div>
+{% endblock %}

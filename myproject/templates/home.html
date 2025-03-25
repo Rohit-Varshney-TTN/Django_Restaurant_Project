@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Our Restaurant</h1>
+    <p>Explore our delicious menu and order your favorite dishes!</p>
+    <a class="btn btn-primary" href="{% url 'food-list' %}">View Menu</a>
+</div>
+{% endblock %}
