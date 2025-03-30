@@ -27,7 +27,7 @@ myproject/
 Setup & Installation:
 ---------------------
 1. Clone the repository:
-   git clone https://github.com/Rohit-Varshney-TTN/Restaurant_Project.git
+   git clone https://github.com/Rohit-Varshney-TTN/Restaurant_Project
    cd restaurant-management
 
 2. Create and activate virtual environment:
