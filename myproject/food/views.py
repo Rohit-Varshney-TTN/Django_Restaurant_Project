@@ -8,14 +8,19 @@ def food_list(request):
     query = request.GET.get('q', '')  # Get search query
     category = request.GET.get('category', '')  # Get category filter (Veg/Non-Veg)
 
-    # Filter food items based on query and category
+    # Start with all food items
     foods = FoodItem.objects.all()
+
+    # Filter by name if query is provided
     if query:
         foods = foods.filter(name__icontains=query)
-    if category:
+
+    # Filter by category if selected
+    if category and category != 'all':
         foods = foods.filter(category=category)
 
-    return render(request, 'food/food_list.html', {'foods': foods, 'query': query, 'category': category})
+    return render(request, 'food/food_list.html', {'foods': foods, 'query': query, 'selected_category': category})
+
 
 def food_detail(request, food_id):
     """

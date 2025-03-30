@@ -2,17 +2,34 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
-
-.main {
-    max-width: 100%;
-    margin: 20px;
-    padding: 20px;
-    background-color: rgb(208, 243, 238);
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.card {
-    max-width: 300px;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    height: 400px;
+.container {
+    flex: 1;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.text-center{
+    padding: 300px;
+    background-image: url(https://image.slidesdocs.com/responsive-images/slides/0-simple-gourmet-western-restaurant-introduction-planning-powerpoint-background_6d04ca1081__960_540.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

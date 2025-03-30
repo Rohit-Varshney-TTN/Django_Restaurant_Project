@@ -3,6 +3,25 @@
 {% block content %}
 <div class="container">
     <h2>Menu</h2>
+
+    <!-- Search & Category Filter -->
+    <form method="GET" action="{% url 'food-list' %}" class="search-form">
+        <input type="text" name="q" placeholder="Search for food..." value="{{ query }}">
+        
+        <select name="category">
+            <option value="all" {% if selected_category == "all" %}selected{% endif %}>All</option>
+            <option value="veg" {% if selected_category == "veg" %}selected{% endif %}>Vegetarian</option>
+            <option value="nonveg" {% if selected_category == "nonveg" %}selected{% endif %}>Non-Vegetarian</option>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- My Cart Button -->
+    <div class="cart-button-container">
+        <a href="{% url 'cart-view' %}" class="btn btn-warning my-cart-btn"> 🛒 My Cart</a>
+    </div>
+
     <div class="row">
         {% for food in foods %}
         <div class="col-md-4">
@@ -11,12 +30,15 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ food.name }}</h5>
                     <p class="card-text">{{ food.description }}</p>
-                    <p class="text-success">${{ food.price }}</p>
+                    <p class="text-success">₹{{ food.price }}</p>
+                    <p>Category: {{ food.get_category_display }}</p>
                     <a class="btn btn-primary" href="{% url 'add-to-cart' food.id %}">Add to Cart</a>
                     <a class="btn btn-secondary" href="{% url 'food-detail' food.id %}">View</a>
                 </div>
             </div>
         </div>
+        {% empty %}
+        <p>No food items found.</p>
         {% endfor %}
     </div>
 </div>

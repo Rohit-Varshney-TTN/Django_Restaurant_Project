@@ -1,0 +1,11 @@
+# version: '3.8'
+
+services:
+  django:
+    build: .
+    image: django-docker:0.0.2  # Custom image name (you can name it as you like)
+    ports:
+      - "8000:8000"  # Expose port 8000 from container to host
+    volumes:
+      - .:/app  # Mount the project directory inside the container
+    command: python manage.py runserver 0.0.0.0:8000  # Start Django app

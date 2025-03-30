@@ -1,11 +1,94 @@
-.food-item {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
+/* Center align the search form */
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style the search input */
+.search-form input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the category dropdown */
+.search-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Style the search button */
+.search-form button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the food cards */
+.card {
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     transition: transform 0.3s;
 }
 
-.food-item:hover {
+.card:hover {
     transform: scale(1.05);
+}
+
+/* Make images responsive */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Style the card body */
+.card-body {
+    text-align: center;
+    padding: 15px;
+}
+
+/* Category text */
+.card-body p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* Center align the "My Cart" button */
+.cart-button-container {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+/* Style My Cart button */
+.my-cart-btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: black;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.my-cart-btn:hover {
+    background-color: #e0a800;
+    color: white;
 }
