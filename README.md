@@ -15,6 +15,7 @@ Features:
 
 Project Structure:
 ------------------
+"
 myproject/
   ├── account/          (User authentication)
   ├── cart/             (Cart functionality)
@@ -23,6 +24,7 @@ myproject/
   ├── static/           (CSS & JS files)
   ├── manage.py         
   ├── db.sqlite3        
+  "
 
 Setup & Installation:
 ---------------------
