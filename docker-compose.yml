@@ -1,0 +1,21 @@
+# version: '3.8'
+
+services:
+  django:
+    container_name: django
+    build:
+      context : ./myproject
+    image: django-docker:0.0.2  # Custom image name (you can name it as you like)
+    ports:
+      - "8001:8000"  # Expose port 8000 from container to host
+    volumes:
+      - .:/app  # Mount the project directory inside the container
+    command: python manage.py runserver 0.0.0.0:8000  # Start Django app
+    volumes:
+      - ./myproject:/usr/src/app/
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=localhost,127.0.0.1
+    env_file:
+      - .env
